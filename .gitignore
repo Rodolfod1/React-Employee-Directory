@@ -127,4 +127,9 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.eslintcache
+ReactInst.md
+
 >>>>>>> 8f0e1be... Initialize project using Create React App
+
