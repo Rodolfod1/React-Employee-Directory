@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Rodolfod1/React-Employee-Directory/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/Rodolfod1/React-Employee-Directory/static/js/main.f40a1319.chunk.js",
+    "main.js.map": "/Rodolfod1/React-Employee-Directory/static/js/main.f40a1319.chunk.js.map",
+    "runtime-main.js": "/Rodolfod1/React-Employee-Directory/static/js/runtime-main.a0210634.js",
+    "runtime-main.js.map": "/Rodolfod1/React-Employee-Directory/static/js/runtime-main.a0210634.js.map",
+    "static/js/2.3405d1de.chunk.js": "/Rodolfod1/React-Employee-Directory/static/js/2.3405d1de.chunk.js",
+    "static/js/2.3405d1de.chunk.js.map": "/Rodolfod1/React-Employee-Directory/static/js/2.3405d1de.chunk.js.map",
+    "static/js/3.edbdf19a.chunk.js": "/Rodolfod1/React-Employee-Directory/static/js/3.edbdf19a.chunk.js",
+    "static/js/3.edbdf19a.chunk.js.map": "/Rodolfod1/React-Employee-Directory/static/js/3.edbdf19a.chunk.js.map",
+    "index.html": "/Rodolfod1/React-Employee-Directory/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/Rodolfod1/React-Employee-Directory/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.3405d1de.chunk.js.LICENSE.txt": "/Rodolfod1/React-Employee-Directory/static/js/2.3405d1de.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Rodolfod1/React-Employee-Directory/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a0210634.js",
+    "static/js/2.3405d1de.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.f40a1319.chunk.js"
+  ]
+}
