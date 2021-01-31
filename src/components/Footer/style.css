@@ -1,6 +1,7 @@
     /* Footer */
 /* containing position sticky */
 .footer {
+    display: flex;
     text-align: center;
     position: sticky;
     left: 0;
