@@ -1,0 +1,24 @@
+    /* Footer */
+/* containing position sticky */
+.footer {
+    text-align: center;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    color:#C5E8E5;
+  
+  }
+  .footer .copyright {
+    font-size: larger;
+    color:#2d363680 ;
+  
+  }
+  .footer .fab {
+    margin: 3px 10px 3px 10px;
+    text-align: center;
+    color:#2d363680 ;
+  
+  }
+  
