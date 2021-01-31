@@ -2,6 +2,11 @@
 import React, {useState, useEffect } from 'react'
 import API from "../utils/API"
 
+const GetInfo = () =>{
+
+}
+
+
 const Employee = () => {
         useEffect( ()=>{
             FetchItems();
