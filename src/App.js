@@ -1,11 +1,11 @@
-// import logo from './logo.svg';
-// import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Hero from "./components/Hero"
 
 function App() {
   return (
- <div>
-   <h1>Employee Directory</h1>
- </div>
+ <Router>
+   <Hero />
+ </Router>
   );
 }
 
