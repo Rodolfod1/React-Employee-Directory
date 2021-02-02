@@ -8,29 +8,24 @@ import { render } from '@testing-library/react';
 const About = () => {
     // declaring variable to set state 
     const [id, setId]= useState({});
-    const [employee, setEmployee] = useState({ });
+    const [employees, setEmployees] = useState([]);
 
     // Function will get random users when component loads 
     useEffect ( () => {
         loadUsers();
     },[] );
     
-    /// API call 
+       /// API call 
     const loadUsers = () => {
         API.GetItems()
-        .then( users =>{
-            // assigning object ot employee 
-            const employee=users.users.results[0];
-            //seed is the unique ID from the API to be used to select specific user 
-            const id=users.users.info.seed;
-            setEmployee(employee);
-            setId(id);
-            console.log(employee.email);
+        .then(results=> {
+            setId(results.data.info.seed)
+            setEmployees(results.data.results[0]);
+            console.log(employees);
             console.log(id);
-                       
         })
         .catch(err => console.log(err));
-    };
+    }
 
      
         return (
@@ -39,7 +34,14 @@ const About = () => {
                 <Hero backgroundImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7njMApBZ1PyHUSg5cKmojRKQti_JvTRznw&usqp=CAU">
                     <h1> Welcome to the Employee Directory </h1>
                 </Hero>
-           
+               {/* <h2>{employees.name.last}</h2> <br></br>
+               <h3>{employees.name.first}</h3> */}
+               
+               <h1>{employees.email}</h1>
+               <h1>{employees.dob.age}</h1> <br></br>
+               <h2>{employees.nat}</h2>
+               {/* {employees.picture} */}
+
             
             </div>
         )
