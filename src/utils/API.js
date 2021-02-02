@@ -9,19 +9,7 @@ export default {
     .then(res=> {
       const users=res.data;
       return {users}
-      // return users.map(user =>{
-      //   return{
-      //     users
-      //     // name: user.name,
-      //     // id: user.id,
-      //     // dob: user.dob,
-      //     // picture: user.picture,
-      //     // phone: user.phone, 
-      //     // email: user.email,
-      //     // gender: user.gender,
-      //     // nat: user.nat
-      //   }
-      // })
+   
     })
   }
 };
