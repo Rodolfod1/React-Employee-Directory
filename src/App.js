@@ -3,16 +3,20 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./pages/About";
 import Footer from "./components/Footer"
 import Wrapper  from "./components/Wrapper";
-// import Employee from "./pages/Employee";
+import Hero from "./components/Hero";
+import EmployeeTable from "./components/EmployeeTable";
 
 function App() {
   return (
       <Router>
         <div>
+          <Hero backgroundImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7njMApBZ1PyHUSg5cKmojRKQti_JvTRznw&usqp=CAU">
+                    <h1> Welcome to the Employee Directory </h1> </Hero>
           <Wrapper>
-            <Route path="/" exact component={About} />
-            <Route path="/about" component={About} />
-            {/* <Route path="/employee" exact component={Employee} /> */}
+            <EmployeeTable>
+              <Route path="/" exact component={About} />
+              <Route path="/about" component={About} />
+            </EmployeeTable>
           </Wrapper>
           <Footer />
         </div>

@@ -5,9 +5,6 @@ const BASEURL = "https://randomuser.me/api/?results=50&nat=us";
 export default {
   GetItems: ()=> {
     return axios.get(BASEURL)
-    // .then(res=>{
-    //   return res.data.results
-    // })
   }
 };
 

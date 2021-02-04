@@ -1,7 +1,5 @@
 import React, {useEffect,useState} from 'react'
 import API from "../utils/API"
-import Hero from "../components/Hero"
-// import { render } from '@testing-library/react';
 
 
 // call to main function to render about page 
@@ -20,23 +18,19 @@ const About = () => {
         .then(results=> {
             
             setEmployees(results.data.results)
-            // const e= results.data.results
-            // console.log(e);
-            //console.log(this.state);
+         
              
         })
         .catch((err)=>{ 
             console.log(err);
         })
     }
+    //logging the array to verify array 
     console.log(employees);
      
         return (
             <div>
-               
-                <Hero backgroundImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7njMApBZ1PyHUSg5cKmojRKQti_JvTRznw&usqp=CAU">
-                    <h1> Welcome to the Employee Directory </h1>
-                </Hero>
+                       
 
                 <table>
                 <thead>

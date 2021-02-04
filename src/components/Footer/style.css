@@ -1,14 +1,14 @@
-    /* Footer */
-/* containing position sticky */
+    /* My React Footer */
+
 .footer {
-    display: flex;
+   
     text-align: center;
-    position: sticky;
-    left: 0;
-    bottom: 0;
+   
+    left:0px;
+    bottom:60px;
     width: 100%;
     margin-top: 20px;
-    color:#C5E8E5;
+   
   
   }
   .footer .copyright {
