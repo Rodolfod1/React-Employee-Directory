@@ -1,4 +1,15 @@
 .wrapper {
-    min-height: 100%;
-    padding-bottom: 100px;
-  }
+  padding-top: 50px;
+  /* background: #091924; */
+  background: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 100px;
+  padding: 20px;
+  justify-content: space-around;
+  align-content: flex-start;
+  overflow: auto;
+ 
+ 
+}

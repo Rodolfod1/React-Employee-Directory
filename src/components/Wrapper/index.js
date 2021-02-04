@@ -1,6 +1,4 @@
-
-import "./style.css";
-
+import "./style.css"
 
 const Wrapper = (props) => {
     return (
