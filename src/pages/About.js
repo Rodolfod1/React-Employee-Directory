@@ -35,10 +35,12 @@ const About = () => {
                 <table>
                 <thead>
                     <tr>
+                        <th>Location</th>
                         <th>Last Name</th>
                         <th>First Name</th>
+                        <th>Phone </th>
                         <th>Email</th>
-                        <th>Location</th>
+                        <th>Profile</th>
                     </tr>
                 </thead>
 
@@ -46,17 +48,21 @@ const About = () => {
 
                 <tbody>
                     { employees[0] !==undefined && employees[0].name !==undefined ? (
-                            employees.map(({email,phone,login,name,location}) => {
+                            employees.map(({email,phone,login,name,location,picture}) => {
                                 return (
                                     // <tr>
                                     <tr key={login.uuid}>
-                                        <td>{email}</td>
-                                        <td>{phone}</td>
+                                        <td>{location.country}</td>
                                        
                                     <td>{name.last}</td>
                                     <td>{name.first}</td>
+                                    <td>{phone}</td>
+                                    <td>{email}</td>
                                     
-                                    <td>{location.country}</td>
+                                  
+                                    <td data-th="Image" className="align-middle">
+                                    <img src={picture.medium} alt={"profile image for " + name.first + " " + name.last} className="img-responsive"/>
+                                    </td>
                                 </tr>
                                    
                                     
