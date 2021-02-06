@@ -1,8 +1,17 @@
-import "./style.css"
-const EmployeeTable = (props) => {
+import React from 'react'
+import EmployeeHeader from "../EmployeeHeader"
+import EmployeeListItem from '../EmployeeListItem'
+
+
+const EmployeeTable = () => {
+    
     return (
-         <main className="table">{props.children}</main>
+        <EmployeeListItem/>
+        // <EmployeeHeader>
+        //     <EmployeeListItem/>
+        // </EmployeeHeader>
     )
 }
+
 export default EmployeeTable
 
