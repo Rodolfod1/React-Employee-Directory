@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import axios from "axios";
+import SearchItem from "../SearchItem"
 // import EmployeeHeader from "../EmployeeHeader"
 const BASEURL = "https://randomuser.me/api/?results=50&nat=us,br,fr,de,tr,es";
 
@@ -11,7 +12,7 @@ const EmployeeListItem = () => {
         employees: [],
         sortedEmployees:[] 
     });
-
+    const [auxEmp,setAuxEmp]= useState([{}])
 
     // Function will get random users when component loads 
     useEffect ( () => {
@@ -24,26 +25,18 @@ const EmployeeListItem = () => {
         axios.get(BASEURL)
         .then(results=> {
                      setMyState({...myState, employees:results.data.results, sortedEmployees:results.data.results})
+                     setAuxEmp(results.data.results)
         })
         .catch((err)=>{ 
             console.log(err);
         })
     }
-
-
-
-    //logging the array to verify array 
-    //  console.log(myState.employees);
-
     // ======================================================================
  //  Generic function to sort an Array of objects based on a key and a direction by R.Diaz
     const [ sortConfig, setSortConfig]=useState({
             key:"name.last", 
                 direction: "ascending"
         });
-   
-    
-       console.log(sortConfig);
 
       //function to compare dynamically an array of objects 
     const SortMyTable = (sortConfig) =>{
@@ -86,11 +79,8 @@ const EmployeeListItem = () => {
   // im calling my function with this and passing sorted employees 
   const sortedTable=myState.sortedEmployees;
     sortedTable.sort(SortMyTable(sortConfig))
-
     // console.log("MY NEWEST");
-console.log(sortedTable);
-
-
+   // console.log(sortedTable);
 
     const getClassNamesFor = (name) => {
         if (!sortConfig) {
@@ -99,13 +89,37 @@ console.log(sortedTable);
         return sortConfig.key === name ? sortConfig.direction : undefined;
       };
   
+ // applying filtering 
+ const filterEmployees = a =>{
+
+     const myTable= [...auxEmp];
+    
+    if (!a.target.value){
+          setMyState(({...myState,sortedEmployees:auxEmp}))
+     } else {
+         const query=a.target.value.toLowerCase();
+             const filterApply= (arr, query)=> {
+             return arr.filter(employee => {
+                 return(
+                     employee.name.last.toLowerCase().indexOf(query) !== -1
+             )
+             })
+           
+            }
+            setMyState(({...myState,sortedEmployees:filterApply(myTable,query)}))
+           
+         }
+           
+       
+     }
+
 
  
 
 
         return ( 
-
-
+            <div className="container">
+                <SearchItem filterEmployees={filterEmployees} />
             <table>
                 <thead>
                     <tr>
@@ -174,6 +188,15 @@ console.log(sortedTable);
                       
                 </tbody>
       </table>
+
+
+
+
+
+
+            </div>
+
+            
 
 
             
