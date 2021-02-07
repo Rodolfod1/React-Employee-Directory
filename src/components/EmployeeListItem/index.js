@@ -42,17 +42,16 @@ const EmployeeListItem = () => {
     const SortMyTable = (sortConfig) =>{
         
         return function innerSort(a,b){
+
+            // if (a !== undefined)
+            console.log(a);
+            // console.log(a[sortConfig.key]);
             if(!a.hasOwnProperty(sortConfig.key)|| !b.hasOwnProperty(sortConfig.key)){
                 return 0;
             }
-
-           // transforming keys to upper case to compare  
-            const e=(typeof a[sortConfig.key] ==='string')
-            ? a[sortConfig.key].toUpperCase():a[sortConfig.key];
-
-            const f=(typeof b[sortConfig.key] ==='string')
-            ? b[sortConfig.key].toUpperCase():b[sortConfig.key];
-
+            const e= a[sortConfig.key];
+            const f= b[sortConfig.key];
+         
             let comparison =0;
             if (e>f) {
                 comparison =1;
@@ -107,15 +106,8 @@ const EmployeeListItem = () => {
            
             }
             setMyState(({...myState,sortedEmployees:filterApply(myTable,query)}))
-           
-         }
-           
-       
+            }      
      }
-
-
- 
-
 
         return ( 
             <div className="container">
@@ -124,19 +116,19 @@ const EmployeeListItem = () => {
                 <thead>
                     <tr>
                         <th>
-                        <button type="button"   className={getClassNamesFor('location')} onClick={() => RequestSort('location.country')}>
+                        {/* <button type="button"   className={getClassNamesFor('location')} onClick={() => RequestSort('.location.country')}> */}
                             Location
-                            </button>
+                            {/* </button> */}
                             </th>
                         <th>
-                        <button type="button"  className={getClassNamesFor('LastName')} onClick={() => RequestSort('name.last')}>
+                        {/* <button type="button"  className={getClassNamesFor('LastName')} onClick={() => RequestSort('name.last')}> */}
                             Last Name
-                            </button>
+                            {/* </button> */}
                             </th>
                         <th>
-                        <button type="button" className={getClassNamesFor('FirstName')} onClick={() => RequestSort('name.first')}>
+                        {/* <button type="button" className={getClassNamesFor('FirstName')} onClick={() => RequestSort('name.first')}> */}
                             First Name
-                            </button>
+                            {/* </button> */}
                             </th>
                         <th>
                         <button type="button" className={getClassNamesFor('Phone')} onClick={() => RequestSort('phone')}>
@@ -173,40 +165,17 @@ const EmployeeListItem = () => {
                                     <td data-th="Image" className="align-middle">
                                     <img src={picture.medium} alt={"profile image for " + name.first + " " + name.last} className="img-responsive"/>
                                     </td>
-                                </tr>
-                                   
-                                  
-                            
-                                    
+                                </tr>                                    
                                 ) 
                             })
                     ) : (
                         <></>
                     ) }
-
-
                       
-                </tbody>
-      </table>
-
-
-
-
-
-
+                    </tbody>
+                </table>
             </div>
-
-            
-
-
-            
-               
-         
         )
-
-
-
-    
 }
 
 export default EmployeeListItem

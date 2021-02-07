@@ -10,7 +10,7 @@ function App() {
       
       <div>
         <Hero backgroundImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7njMApBZ1PyHUSg5cKmojRKQti_JvTRznw&usqp=CAU">
-                   <h1> Welcome to the Employee Directory </h1> </Hero>
+                   <h1> Welcome to the Employee Directory </h1> <br/> <h4>Sort by Phone or Email or use the Search Button to filter </h4></Hero>
                 
         <Wrapper>
           

@@ -2,7 +2,7 @@
   "name": "react-employee-dir",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/about",
+  "homepage": "https://Rodolfod1.github.io/React-Employee-Directory",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b main -d build"
   },
   "eslintConfig": {
     "extends": [
