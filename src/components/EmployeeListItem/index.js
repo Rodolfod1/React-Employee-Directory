@@ -43,14 +43,26 @@ const EmployeeListItem = () => {
         
         return function innerSort(a,b){
 
-            // if (a !== undefined)
-            console.log(a);
-            // console.log(a[sortConfig.key]);
-            if(!a.hasOwnProperty(sortConfig.key)|| !b.hasOwnProperty(sortConfig.key)){
-                return 0;
+            // if(!a.hasOwnProperty(sortConfig.key)|| !b.hasOwnProperty(sortConfig.key)){
+            //     return 0;
+            // }
+             let e ="";
+             let f="";
+
+            if (sortConfig.key === "first"){
+                 e= a.name.first;
+                 f= b.name.first;
+            } else if (sortConfig.key === "last") {
+                 e= a.name.last;
+                 f= b.name.last;
+            } else if (sortConfig.key === "country"){
+                 e= a.location.country;
+                 f= b.location.country;
+            } else {    
+            
+             e= a[sortConfig.key];
+             f= b[sortConfig.key]
             }
-            const e= a[sortConfig.key];
-            const f= b[sortConfig.key];
          
             let comparison =0;
             if (e>f) {
@@ -116,19 +128,19 @@ const EmployeeListItem = () => {
                 <thead>
                     <tr>
                         <th>
-                        {/* <button type="button"   className={getClassNamesFor('location')} onClick={() => RequestSort('.location.country')}> */}
+                        <button type="button"   className={getClassNamesFor('location')} onClick={() => RequestSort('country')}>
                             Location
-                            {/* </button> */}
+                            </button>
                             </th>
                         <th>
-                        {/* <button type="button"  className={getClassNamesFor('LastName')} onClick={() => RequestSort('name.last')}> */}
+                        <button type="button"  className={getClassNamesFor('LastName')} onClick={() => RequestSort('last')}>
                             Last Name
-                            {/* </button> */}
+                            </button>
                             </th>
                         <th>
-                        {/* <button type="button" className={getClassNamesFor('FirstName')} onClick={() => RequestSort('name.first')}> */}
+                        <button type="button" className={getClassNamesFor('FirstName')} onClick={() => RequestSort('first')}>
                             First Name
-                            {/* </button> */}
+                            </button>
                             </th>
                         <th>
                         <button type="button" className={getClassNamesFor('Phone')} onClick={() => RequestSort('phone')}>
