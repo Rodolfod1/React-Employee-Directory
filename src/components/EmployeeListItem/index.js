@@ -122,40 +122,42 @@ const EmployeeListItem = () => {
      }
 
         return ( 
-            <div className="container">
+            // <div className="container">
+            <div className="table-responsive">
                 <SearchItem filterEmployees={filterEmployees} />
-            <table>
+            <table className="table caption-top">
+                <caption> List of users </caption>
                 <thead>
                     <tr>
-                        <th>
-                        <button type="button"   className={getClassNamesFor('location')} onClick={() => RequestSort('country')}>
+                        <th colspan="1" scope="col">
+                        <button type="button"   className="{getClassNamesFor('location')} btn btn-light active"  onClick={() => RequestSort('country')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
                             Location
                             </button>
                             </th>
-                        <th>
-                        <button type="button"  className={getClassNamesFor('LastName')} onClick={() => RequestSort('last')}>
+                        <th colspan="3" scope="col">
+                        <button type="button"  className="{getClassNamesFor('LastName')} btn btn-light active" onClick={() => RequestSort('last')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
                             Last Name
                             </button>
                             </th>
-                        <th>
-                        <button type="button" className={getClassNamesFor('FirstName')} onClick={() => RequestSort('first')}>
+                        <th colspan="2" scope="col">
+                        <button type="button" className="{getClassNamesFor('FirstName')} btn btn-light active" onClick={() => RequestSort('first')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
                             First Name
                             </button>
                             </th>
-                        <th>
-                        <button type="button" className={getClassNamesFor('Phone')} onClick={() => RequestSort('phone')}>
+                        <th colspan="4" scope="col">
+                        <button type="button" className="{getClassNamesFor('Phone')} btn btn-light active" onClick={() => RequestSort('phone')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
                         Phone
                         </button>
                          </th>
-                        <th>
-                        <button type="button" className={getClassNamesFor('Email')} onClick={() => RequestSort('email')}>                   
+                        <th colspan="2" scope="col">
+                        <button type="button" className="{getClassNamesFor('Email')} btn btn-light active" onClick={() => RequestSort('email')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">                   
                             Email
                         </button>
                             </th>
-                        <th>
-                       
+                        <th colspan="2" scope="col">
+                        <button type="button" className="btn btn-light active"  data-bs-toggle="button" autocomplete="off" aria-pressed="true">
                             Profile
-                           
+                           </button>
                             </th>
                     </tr>
                 </thead> 
@@ -166,15 +168,15 @@ const EmployeeListItem = () => {
                                 return (
                                     // <tr>
                                     <tr key={login.uuid}>
-                                        <td>{location.country}</td>
+                                        <td colspan="1" className="align-middle">{location.country}</td>
                                        
-                                    <td>{name.last}</td>
-                                    <td>{name.first}</td>
-                                    <td>{phone}</td>
-                                    <td>{email}</td>
+                                    <td colspan="3" className="align-middle">{name.last}</td>
+                                    <td  colspan="2" className="align-middle">{name.first}</td>
+                                    <td colspan="4" className="align-middle">{phone}</td>
+                                    <td  colspan="2"className="align-middle">{email}</td>
                                     
                                   
-                                    <td data-th="Image" className="align-middle">
+                                    <td colspan="2" data-th="Image" className="align-middle">
                                     <img src={picture.medium} alt={"profile image for " + name.first + " " + name.last} className="img-responsive"/>
                                     </td>
                                 </tr>                                    
