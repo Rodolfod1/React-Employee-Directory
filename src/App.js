@@ -2,7 +2,7 @@ import React from "react";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import Wrapper  from "./components/Wrapper";
 import Hero from "./components/Hero";
-import SearchItem from "./components/SearchItem";
+// import SearchItem from "./components/SearchItem";
 import Home from "../src/pages/Home"
 
 function App() {

@@ -2,6 +2,7 @@ import React, {useEffect,useState} from 'react'
 import axios from "axios";
 import SearchItem from "../SearchItem"
 // import EmployeeHeader from "../EmployeeHeader"
+
 const BASEURL = "https://randomuser.me/api/?results=50&nat=us,br,fr,de,tr,es";
 
 
@@ -17,7 +18,7 @@ const EmployeeListItem = () => {
     // Function will get random users when component loads 
     useEffect ( () => {
         loadUsers();
-    },[] );
+    },[]);
     
        /// API call 
     const loadUsers = () => {
@@ -93,12 +94,6 @@ const EmployeeListItem = () => {
     // console.log("MY NEWEST");
    // console.log(sortedTable);
 
-    const getClassNamesFor = (name) => {
-        if (!sortConfig) {
-          return;
-        }
-        return sortConfig.key === name ? sortConfig.direction : undefined;
-      };
   
  // applying filtering 
  const filterEmployees = a =>{
@@ -123,39 +118,40 @@ const EmployeeListItem = () => {
 
         return ( 
             // <div className="container">
-            <div className="table-responsive">
-                <SearchItem filterEmployees={filterEmployees} />
+            <div className="container-fluid">
+                <SearchItem filterEmployees={filterEmployees} /> 
+              
             <table className="table caption-top">
                 <caption> List of users </caption>
                 <thead>
                     <tr>
-                        <th colspan="1" scope="col">
-                        <button type="button"   className="{getClassNamesFor('location')} btn btn-light active"  onClick={() => RequestSort('country')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
+                        <th colSpan="1" scope="col">
+                        <button type="button"   className="btn btn-light active"  onClick={() => RequestSort('country')} data-bs-toggle="button" aria-pressed="true">
                             Location
                             </button>
                             </th>
-                        <th colspan="3" scope="col">
-                        <button type="button"  className="{getClassNamesFor('LastName')} btn btn-light active" onClick={() => RequestSort('last')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
+                        <th colSpan="3" scope="col">
+                        <button type="button"  className=" btn btn-light active" onClick={() => RequestSort('last')} data-bs-toggle="button"  aria-pressed="true">
                             Last Name
                             </button>
                             </th>
-                        <th colspan="2" scope="col">
-                        <button type="button" className="{getClassNamesFor('FirstName')} btn btn-light active" onClick={() => RequestSort('first')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
+                        <th colSpan="2" scope="col">
+                        <button type="button" className=" btn btn-light active" onClick={() => RequestSort('first')} data-bs-toggle="button"  aria-pressed="true">
                             First Name
                             </button>
                             </th>
-                        <th colspan="4" scope="col">
-                        <button type="button" className="{getClassNamesFor('Phone')} btn btn-light active" onClick={() => RequestSort('phone')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">
+                        <th colSpan="4" scope="col">
+                        <button type="button" className="btn btn-light active" onClick={() => RequestSort('phone')} data-bs-toggle="button"  aria-pressed="true">
                         Phone
                         </button>
                          </th>
-                        <th colspan="2" scope="col">
-                        <button type="button" className="{getClassNamesFor('Email')} btn btn-light active" onClick={() => RequestSort('email')} data-bs-toggle="button" autocomplete="off" aria-pressed="true">                   
+                        <th colSpan="2" scope="col">
+                        <button type="button" className=" btn btn-light active" onClick={() => RequestSort('email')} data-bs-toggle="button"  aria-pressed="true">                   
                             Email
                         </button>
                             </th>
-                        <th colspan="2" scope="col">
-                        <button type="button" className="btn btn-light active"  data-bs-toggle="button" autocomplete="off" aria-pressed="true">
+                        <th colSpan="2" scope="col">
+                        <button type="button" className="btn btn-light active"  data-bs-toggle="button"  aria-pressed="true">
                             Profile
                            </button>
                             </th>
@@ -168,15 +164,15 @@ const EmployeeListItem = () => {
                                 return (
                                     // <tr>
                                     <tr key={login.uuid}>
-                                        <td colspan="1" className="align-middle">{location.country}</td>
+                                        <td colSpan="1" className="align-middle">{location.country}</td>
                                        
-                                    <td colspan="3" className="align-middle">{name.last}</td>
-                                    <td  colspan="2" className="align-middle">{name.first}</td>
-                                    <td colspan="4" className="align-middle">{phone}</td>
-                                    <td  colspan="2"className="align-middle">{email}</td>
+                                    <td colSpan="3" className="align-middle">{name.last}</td>
+                                    <td  colSpan="2" className="align-middle">{name.first}</td>
+                                    <td colSpan="4" className="align-middle">{phone}</td>
+                                    <td  colSpan="2"className="align-middle">{email}</td>
                                     
                                   
-                                    <td colspan="2" data-th="Image" className="align-middle">
+                                    <td colSpan="2" data-th="Image" className="align-middle">
                                     <img src={picture.medium} alt={"profile image for " + name.first + " " + name.last} className="img-responsive"/>
                                     </td>
                                 </tr>                                    
